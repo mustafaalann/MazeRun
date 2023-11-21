@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         // let the gameObject fall down
-        gameObject.transform.position = new Vector3(5, 4, 4);
+        gameObject.transform.position = new Vector3(45, 3, 45);
     }
 
     void Update()
@@ -40,5 +40,17 @@ public class PlayerMove : MonoBehaviour
 
         // Move the controller
         controller.Move(moveDirection * Time.deltaTime);
+    }
+
+    void returnToBase(){
+        gameObject.transform.position = new Vector3(45, 3, 45);
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.collider.CompareTag("obstacle"))
+        {
+            returnToBase();
+        }
     }
 }
