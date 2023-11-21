@@ -16,7 +16,7 @@ public class MovingUpTrap : MonoBehaviour
         while (true)
         {
             // Move up
-            while (transform.position.y < -1)
+            while (transform.position.y < -0.4)
             {
                 transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
                 yield return null;
