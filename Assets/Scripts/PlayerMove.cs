@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         // let the gameObject fall down
-        gameObject.transform.position = new Vector3(35, 3, 95);
+        gameObject.transform.position = new Vector3(5, 3, 65);
     }
 
     void Update()
@@ -43,7 +43,8 @@ public class PlayerMove : MonoBehaviour
     }
 
     void returnToBase(){
-        gameObject.transform.position = new Vector3(35, 3, 95);
+        gameObject.transform.position = new Vector3(6, 3, 65);
+        resetTimer();
     }
 
 
@@ -53,5 +54,15 @@ public class PlayerMove : MonoBehaviour
         {
             returnToBase();
         }
+    }
+
+    void resetTimer(){
+
+        GameObject timeManagerObject = GameObject.Find("TimeManager");
+
+        TimeManager timeManagerScript = timeManagerObject.GetComponent<TimeManager>();
+        
+        timeManagerScript.ResetTimer();
+        
     }
 }
