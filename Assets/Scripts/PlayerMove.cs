@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         // let the gameObject fall down
-        gameObject.transform.position = new Vector3(5, 3, 65);
+        gameObject.transform.position = new Vector3(5, 4, 5);
     }
 
     void Update()
@@ -43,7 +43,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     void returnToBase(){
-        gameObject.transform.position = new Vector3(6, 3, 65);
+        gameObject.transform.position = new Vector3(5, 4, 5);
         resetTimer();
     }
 

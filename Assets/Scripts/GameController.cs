@@ -6,6 +6,14 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(2);
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player"){
