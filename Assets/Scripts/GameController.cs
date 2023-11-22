@@ -10,21 +10,21 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(0);
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player"){
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
             Cursor.visible = true;
         }
     }
 
     public void RestartGame(){
         Cursor.visible = false;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void EndGame(){
