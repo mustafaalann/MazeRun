@@ -5,10 +5,12 @@ using UnityEngine;
 public class MovingUpTrap : MonoBehaviour
 {
     public float moveSpeed = 5f;    // Speed of the movement
+    AudioSource audioSource;
 
     void Start()
     {
         StartCoroutine(MoveUpDown());
+        audioSource = GetComponent<AudioSource>();
     }
 
     IEnumerator MoveUpDown()
@@ -31,9 +33,10 @@ public class MovingUpTrap : MonoBehaviour
                 transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
                 yield return null;
             }
-
+            
             // Wait for 2 seconds
             yield return new WaitForSeconds(2f);
+            audioSource.Play();
         }
     }
 }

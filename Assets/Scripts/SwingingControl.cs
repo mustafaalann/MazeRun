@@ -10,16 +10,23 @@ public class SwingingControl : MonoBehaviour
 
     public bool turnClockwise = true;
 
+    AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         if(transform.rotation.x > 0.3f){
             turnClockwise = false;
-            print("change direction to not clockwise");
+            audioSource.Play();
         }
 
         if(transform.rotation.x < -0.3f){
             turnClockwise = true;
-            print("change direction to clockwise");
+            audioSource.Play();
 
         }
         // Ensure the pivot point is not null before attempting to rotate
