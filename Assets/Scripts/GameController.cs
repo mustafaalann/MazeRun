@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Cursor.visible = true;
             SceneManager.LoadScene(0);
         }
     }
